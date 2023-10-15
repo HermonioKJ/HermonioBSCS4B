@@ -1,0 +1,12 @@
+public key (e,n) > (11,117)
+private key (d,n) > (35, 117)
+
+message m > 10
+
+to encrypt
+m^^e%n > 10^^11%117=em
+to decrypt
+em^^d%n > em^^35%117=dm
+
+em stands for Encrypted message
+dm stands for decrypted message
