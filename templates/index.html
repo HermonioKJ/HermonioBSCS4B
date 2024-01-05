@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Machine Learning Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+ .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Machine Learning Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="administration">Administration:</label>
+            <input type="text" id="administration" name="administration"><br><br>
+            
+            <label for="marketing_spend">Marketing Spend:</label>
+            <input type="text" id="marketing_spend" name="marketing_spend"><br><br>
+            
+            <label for="rd_spend">R&D Spend:</label>
+            <input type="text" id="rd_spend" name="rd_spend"><br><br>
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city"><br><br>
+            <p style="margin-top: -16px; margin-bottom: 40px;">0 = Batangas | 1 = Cebu | 2 = Iloilo | 3 = Makati</p>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if predictions is defined %}
+            <h2>Prediction Result:</h2>
+            <p>The predicted profit is: {{ predictions }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
